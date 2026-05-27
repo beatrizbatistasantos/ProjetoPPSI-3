@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos Geek</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Fredoka", sans-serif;
+    }
+
+    body{
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ff9d00, #ff7b00, #ff5e00);
+      color: white;
+      padding: 40px;
+    }
+
+    h1{
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 50px;
+      text-shadow: 5px 5px 0 #7a2d00;
+    }
+
+    .eventos{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .cidade{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 70px;
+  margin-bottom: 35px;
+  text-shadow: 4px 4px 0 #7a2d00;
+}
+
+    .evento-card{
+      width: 320px;
+      background: linear-gradient(180deg, #ffb300, #ff8c00);
+      border-radius: 35px;
+      padding: 25px;
+      box-shadow: 0 12px 0 #d95b00;
+      transition: 0.3s;
+    }
+
+    .evento-card:hover{
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .evento-card h2{
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 0 #b34700;
+    }
+
+    .info{
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .label{
+      color: #ffe600;
+    }
+
+    .voltar{
+  position: fixed;
+  top: 25px;
+  left: 25px;
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  background: white;
+  color: #ff6b00;
+
+  border-radius: 50%;
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  box-shadow: 0 8px 0 #d95b00;
+
+  transition: 0.3s;
+}
+
+    .voltar:hover{
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #d95b00;
+    }
+
+    footer{
+  margin-top: 70px;
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 20px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <h1>🎉 Eventos Geek</h1>
+
+
+  <h2 class="cidade">📍 São Vicente</h2>
+
+  <section class="eventos">
+
+    <div class="evento-card">
+
+      <h2>Anime Fest SV</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Shopping Brisamar
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        12/07/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        13:00 até 21:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>Geek Summer</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Gonzaguinha
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        15/07/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        14:00 até 20:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>Otaku Day</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Centro de Convenções SV
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        20/07/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        10:00 até 18:00
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <h2 class="cidade">📍 Santos</h2>
+
+  <section class="eventos">
+
+    <div class="evento-card">
+
+      <h2>Cosplay World</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Mendes Convention Center
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        18/07/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        10:00 até 20:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>Retro Games</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Centro Histórico
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        25/07/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        14:00 até 23:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>K-pop Festival</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Shopping Parque Balneário
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        27/07/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        11:00 até 19:00
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <h2 class="cidade">📍 Guarujá</h2>
+
+  <section class="eventos">
+
+    <div class="evento-card">
+
+      <h2>Game Arena</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Enseada Plaza
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        05/08/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        12:00 até 22:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>Anime Beach</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Praia da Enseada
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        08/08/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        09:00 até 18:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>RPG Quest</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Centro Cultural Guarujá
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        10/08/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        15:00 até 21:00
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <h2 class="cidade">📍 Praia Grande</h2>
+
+  <section class="eventos">
+
+    <div class="evento-card">
+
+      <h2>Comic Power</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Litoral Plaza Shopping
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        14/08/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        13:00 até 20:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>Geek Night</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Aviação Eventos Hall
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        18/08/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        17:00 até 00:00
+      </div>
+
+    </div>
+
+    <div class="evento-card">
+
+      <h2>Mega Otaku</h2>
+
+      <div class="info">
+        <span class="label">📍 Endereço:</span><br>
+        Palácio das Artes
+      </div>
+
+      <div class="info">
+        <span class="label">📅 Data:</span><br>
+        22/08/2026
+      </div>
+
+      <div class="info">
+        <span class="label">⏰ Horário:</span><br>
+        10:00 até 19:00
+      </div>
+
+    </div>
+
+  </section>
+
+  <a href="../index.html" class="voltar">
+    ⬅ 
+  </a>
+
+  <footer>
+  Feito com 🧡 para a comunidade geek da Baixada Santista
+</footer>
+
+</body>
+</html>

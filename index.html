@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Geek Baixada</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Fredoka", sans-serif;
+    }
+
+    body{
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ff9d00, #ff7b00, #ff5e00);
+      overflow-x: hidden;
+      color: white;
+      position: relative;
+    }
+
+
+    .bolha{
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      z-index: 0;
+    }
+
+    .b1{
+      width: 200px;
+      height: 200px;
+      top: -50px;
+      left: -50px;
+    }
+
+    .b2{
+      width: 300px;
+      height: 300px;
+      bottom: -100px;
+      right: -80px;
+    }
+
+    .container{
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1300px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+
+    header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .botoes-header{
+  display: flex;
+  gap: 15px;
+}
+
+    .logo{
+      background: white;
+      color: #ff6b00;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 8px 0 #d95b00;
+    }
+
+    .login{
+      background: white;
+      color: #ff6b00;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 0 #d95b00;
+    }
+
+    .login:hover{
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #d95b00;
+    }
+
+    .sobre{
+  background: white;
+  color: #ff6b00;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 0 #d95b00;
+}
+
+.sobre:hover{
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #d95b00;
+}
+
+
+    .hero{
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .hero h1{
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow:
+      5px 5px 0 #7a2d00;
+    }
+
+    .hero span{
+      color: #ffe600;
+    }
+
+    .hero p{
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.3rem;
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
+      border-radius: 30px;
+      backdrop-filter: blur(5px);
+    }
+
+
+    .cards{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 700px;
+  margin: auto;
+}
+
+    .card{
+      background: linear-gradient(180deg, #ffb300, #ff8c00);
+      border-radius: 35px;
+      padding: 18px 25px;
+      text-align: center;
+      box-shadow: 0 12px 0 #d95b00;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover{
+      transform: translateY(-10px) rotate(-1deg);
+    }
+
+    .emoji{
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card h2{
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-shadow: 3px 3px 0 #b34700;
+    }
+
+    .card p{
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+
+
+    .btn-card{
+  display: block;
+  text-decoration: none;
+  border: none;
+  background: white;
+  color: #ff6b00;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+  box-shadow: 0 6px 0 #d95b00;
+}
+
+.btn-card:hover{
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #d95b00;
+}
+
+
+    footer{
+      margin-top: 70px;
+      text-align: center;
+      font-size: 1rem;
+      padding-bottom: 20px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="bolha b1"></div>
+  <div class="bolha b2"></div>
+
+  <div class="container">
+
+    <header>
+
+      <div class="logo">
+        🎮 Geek Baixada
+      </div>
+
+      <div class="botoes-header">
+
+  <button class="login">
+    Entrar / Criar Conta
+  </button>
+
+  <button class="sobre">
+    Sobre Nós
+  </button>
+
+</div>
+
+    </header>
+
+    <section class="hero">
+
+      <h1>
+        Geek
+         <span>Baixada!</span>
+      </h1>
+
+      <p>
+        Descubra eventos de anime, games, cosplay, RPG,
+        card games, K-pop e cultura geek em toda a Baixada Santista.
+      </p>
+
+    </section>
+
+    <section class="cards">
+
+      <div class="card">
+
+
+        <h2>Eventos</h2>
+
+        <p>
+          Explore os próximos eventos geek da região e descubra
+          encontros incríveis.
+        </p>
+
+        <a href="pages/eventos.html" class="btn-card">
+    Explorar Eventos
+</a>
+
+      </div>
+
+      <div class="card">
+
+
+        <h2>Publicar</h2>
+
+        <p>
+          Divulgue eventos para toda a comunidade geek da Baixada Santista.
+        </p>
+
+        <a href="pages/criar-evento.html" class="btn-card">
+  Publicar Eventos
+</a>
+
+      </div>
+
+    </section>
+
+    <footer>
+      Feito com 🧡 para a comunidade geek da Baixada Santista
+    </footer>
+
+  </div>
+
+</body>
+</html>
