@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evento Geek</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/evento.css">
+
+</head>
+<body>
+
+<a href="eventos.html" class="voltar">⬅</a>
+
+<div class="container">
+
+  <h1 id="titulo"></h1>
+
+  <img id="imagem" src="" alt="Evento">
+
+  <div class="info-card">
+
+  <div class="info-grid">
+
+    <div class="bloco">
+
+      <h2>📋 Informações</h2>
+
+      <div class="item">
+        <span class="label">📍 Local:</span>
+        <span id="local"></span>
+      </div>
+
+      <div class="item">
+        <span class="label">📅 Data:</span>
+        <span id="data"></span>
+      </div>
+
+      <div class="item">
+        <span class="label">⏰ Horário:</span>
+        <span id="horario"></span>
+      </div>
+
+      <div class="item">
+        <span class="label">🎟️ Entrada:</span>
+        <span id="entrada"></span>
+      </div>
+
+      <div class="item">
+        <span class="label">🥫 Alimento Solidário:</span>
+        <span id="alimento"></span>
+      </div>
+
+    </div>
+
+    <div class="bloco">
+
+      <h2>⭐ Convidados</h2>
+
+      <p id="convidados"></p>
+
+    </div>
+
+  </div>
+
+  <div class="bloco" style="margin-top:25px;">
+
+    <h2>🎭 Atrações do Evento</h2>
+
+    <div id="atracoes" class="lista-atracoes"></div>
+
+  </div>
+
+  <div class="bloco" style="margin-top:25px;">
+
+    <h2>📖 Sobre o Evento</h2>
+
+    <p id="descricao"></p>
+
+  </div>
+
+  <button id="btnExcluir" class="btn-excluir">
+  🗑️ Excluir Evento
+</button>
+
+</div>
+
+</div>
+
+<script src="../js/storage.js"></script>
+
+</body>
+</html>
+```

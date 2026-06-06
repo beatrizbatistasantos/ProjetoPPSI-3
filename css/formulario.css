@@ -1,0 +1,186 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Fredoka", sans-serif;
+    }
+
+    body{
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ff9d00, #ff7b00, #ff5e00);
+      color: white;
+      padding: 40px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+
+    .voltar{
+      position: fixed;
+      top: 25px;
+      left: 25px;
+
+      width: 70px;
+      height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+
+      background: white;
+      color: #ff6b00;
+
+      border-radius: 50%;
+
+      font-size: 2rem;
+      font-weight: bold;
+
+      box-shadow: 0 8px 0 #d95b00;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover{
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #d95b00;
+    }
+
+
+    h1{
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 50px;
+      text-shadow: 5px 5px 0 #7a2d00;
+    }
+
+
+    .form-container{
+      width: 800px;
+      margin: auto;
+
+      background: linear-gradient(180deg, #ffb300, #ff8c00);
+
+      padding: 40px;
+
+      border-radius: 40px;
+
+      box-shadow: 0 12px 0 #d95b00;
+    }
+
+    .campo{
+      margin-bottom: 30px;
+    }
+
+    .campo label{
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 0 #b34700;
+    }
+
+    .campo input,
+    .campo textarea,
+    .campo select{
+
+      width: 100%;
+
+      border: none;
+
+      border-radius: 20px;
+
+      padding: 18px;
+
+      font-size: 1rem;
+
+      outline: none;
+
+      color: #ff6b00;
+
+      background: white;
+    }
+
+    textarea{
+      resize: none;
+      height: 150px;
+    }
+
+    .dupla{
+      display: flex;
+      gap: 20px;
+    }
+
+    .dupla .campo{
+      width: 100%;
+    }
+
+    .secao{
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  text-shadow: 3px 3px 0 #b34700;
+  color: white;
+}
+
+.painel{
+  margin-bottom:20px;
+  background:rgba(255,255,255,0.15);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.painel summary{
+  padding:20px;
+  cursor:pointer;
+  font-size:1.3rem;
+  font-weight:bold;
+  list-style:none;
+}
+
+.painel summary::-webkit-details-marker{
+  display:none;
+}
+
+.conteudo-painel{
+  padding:20px;
+}
+
+
+    .publicar{
+      width: 100%;
+
+      border: none;
+
+      background: white;
+
+      color: #ff6b00;
+
+      padding: 20px;
+
+      border-radius: 25px;
+
+      font-size: 1.3rem;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow: 0 8px 0 #d95b00;
+
+      transition: 0.3s;
+    }
+
+    .publicar:hover{
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #d95b00;
+    }
+    
+
+
+    footer{
+      margin-top: 70px;
+      text-align: center;
+      font-size: 1rem;
+      padding-bottom: 20px;
+    }

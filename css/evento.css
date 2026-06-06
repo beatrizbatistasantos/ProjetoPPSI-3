@@ -1,0 +1,152 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Fredoka", sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(180deg,#ff9d00,#ff7b00,#ff5e00);
+  color:white;
+  padding:40px;
+}
+
+.voltar{
+  position:fixed;
+  top:25px;
+  left:25px;
+
+  width:70px;
+  height:70px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  background:white;
+  color:#ff6b00;
+
+  border-radius:50%;
+
+  font-size:2rem;
+  font-weight:bold;
+
+  box-shadow:0 8px 0 #d95b00;
+  transition:.3s;
+}
+
+.voltar:hover{
+  transform:translateY(4px);
+  box-shadow:0 4px 0 #d95b00;
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto;
+}
+
+#titulo{
+  text-align:center;
+  font-size:4rem;
+  margin-bottom:30px;
+  text-shadow:5px 5px 0 #7a2d00;
+}
+
+#imagem{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  border-radius:35px;
+  margin-bottom:30px;
+  background:#ffd27a;
+}
+
+.info-card{
+  background:linear-gradient(180deg,#ffb300,#ff8c00);
+  border-radius:35px;
+  padding:30px;
+  box-shadow:0 12px 0 #d95b00;
+}
+
+.item{
+  margin-bottom:20px;
+  font-size:1.2rem;
+  line-height:1.6;
+}
+
+.label{
+  color:#ffe600;
+  font-weight:bold;
+}
+
+.descricao{
+  margin-top:30px;
+  padding-top:25px;
+  border-top:3px dashed rgba(255,255,255,.4);
+}
+
+.descricao h2{
+  margin-bottom:15px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:25px;
+  margin-top:20px;
+}
+
+.bloco{
+  background:rgba(255,255,255,0.12);
+  padding:20px;
+  border-radius:20px;
+}
+
+.bloco h2{
+  margin-bottom:15px;
+  color:#ffe600;
+}
+
+.lista-atracoes{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.atracao{
+  background:rgba(255,255,255,0.12);
+  padding:15px;
+  border-radius:15px;
+}
+
+.atracao h3{
+  margin-bottom:8px;
+  color:#ffe600;
+}
+
+.btn-excluir{
+  margin-top:25px;
+  width:100%;
+  padding:18px;
+
+  border:none;
+  border-radius:20px;
+
+  background:#ff2d2d;
+  color:white;
+
+  font-size:1.1rem;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn-excluir:hover{
+  background:#d80000;
+}
+

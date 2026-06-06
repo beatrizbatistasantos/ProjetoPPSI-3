@@ -8,128 +8,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/eventos.css">
 
-  <style>
-
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Fredoka", sans-serif;
-    }
-
-    body{
-      min-height: 100vh;
-      background: linear-gradient(180deg, #ff9d00, #ff7b00, #ff5e00);
-      color: white;
-      padding: 40px;
-    }
-
-    h1{
-      text-align: center;
-      font-size: 4rem;
-      margin-bottom: 50px;
-      text-shadow: 5px 5px 0 #7a2d00;
-    }
-
-    .eventos{
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .cidade{
-  text-align: center;
-  font-size: 3rem;
-  margin-top: 70px;
-  margin-bottom: 35px;
-  text-shadow: 4px 4px 0 #7a2d00;
-}
-
-    .evento-card{
-      width: 320px;
-      background: linear-gradient(180deg, #ffb300, #ff8c00);
-      border-radius: 35px;
-      padding: 25px;
-      box-shadow: 0 12px 0 #d95b00;
-      transition: 0.3s;
-    }
-
-    .evento-card:hover{
-      transform: translateY(-8px) rotate(-1deg);
-    }
-
-    .evento-card h2{
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-shadow: 3px 3px 0 #b34700;
-    }
-
-    .info{
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-      line-height: 1.5;
-    }
-
-    .label{
-      color: #ffe600;
-    }
-
-    .voltar{
-  position: fixed;
-  top: 25px;
-  left: 25px;
-
-  width: 70px;
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-
-  background: white;
-  color: #ff6b00;
-
-  border-radius: 50%;
-
-  font-size: 2rem;
-  font-weight: bold;
-
-  box-shadow: 0 8px 0 #d95b00;
-
-  transition: 0.3s;
-}
-
-    .voltar:hover{
-      transform: translateY(4px);
-      box-shadow: 0 4px 0 #d95b00;
-    }
-
-    footer{
-  margin-top: 70px;
-  text-align: center;
-  font-size: 1rem;
-  padding-bottom: 20px;
-}
-
-  </style>
 </head>
 
 <body>
 
   <h1>🎉 Eventos Geek</h1>
 
+  <div class="filtro-container">
+  <select class="filtro-cidade" id="filtroCidade">
+    <option value="todas">Todas as cidades</option>
+    <option value="saovicente">São Vicente</option>
+    <option value="santos">Santos</option>
+    <option value="guaruja">Guarujá</option>
+    <option value="praiagrande">Praia Grande</option>
+  </select>
+</div>
+
+<div class="grupo-cidade" data-cidade="saovicente">
 
   <h2 class="cidade">📍 São Vicente</h2>
 
   <section class="eventos">
 
-    <div class="evento-card">
+  <div class="evento-card">
 
       <h2>Anime Fest SV</h2>
+
+      <div class="evento-img">FOTO DO EVENTO</div>
 
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
@@ -151,6 +58,8 @@
     <div class="evento-card">
 
       <h2>Geek Summer</h2>
+      
+      <div class="evento-img">FOTO DO EVENTO</div>
 
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
@@ -173,6 +82,8 @@
 
       <h2>Otaku Day</h2>
 
+      <div class="evento-img">FOTO DO EVENTO</div>
+
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
         Centro de Convenções SV
@@ -191,8 +102,9 @@
     </div>
 
   </section>
+  </div>
 
-
+<div class="grupo-cidade" data-cidade="santos">
   <h2 class="cidade">📍 Santos</h2>
 
   <section class="eventos">
@@ -200,6 +112,8 @@
     <div class="evento-card">
 
       <h2>Cosplay World</h2>
+
+      <div class="evento-img">FOTO DO EVENTO</div>
 
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
@@ -222,6 +136,8 @@
 
       <h2>Retro Games</h2>
 
+      <div class="evento-img">FOTO DO EVENTO</div>
+
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
         Centro Histórico
@@ -243,6 +159,8 @@
 
       <h2>K-pop Festival</h2>
 
+      <div class="evento-img">FOTO DO EVENTO</div>
+
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
         Shopping Parque Balneário
@@ -261,7 +179,9 @@
     </div>
 
   </section>
+</div>
 
+<div class="grupo-cidade" data-cidade="guaruja">
 
   <h2 class="cidade">📍 Guarujá</h2>
 
@@ -270,6 +190,8 @@
     <div class="evento-card">
 
       <h2>Game Arena</h2>
+
+      <div class="evento-img">FOTO DO EVENTO</div>
 
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
@@ -292,6 +214,8 @@
 
       <h2>Anime Beach</h2>
 
+      <div class="evento-img">FOTO DO EVENTO</div>
+
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
         Praia da Enseada
@@ -313,6 +237,8 @@
 
       <h2>RPG Quest</h2>
 
+      <div class="evento-img">FOTO DO EVENTO</div>
+
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
         Centro Cultural Guarujá
@@ -331,8 +257,9 @@
     </div>
 
   </section>
+</div>
 
-
+<div class="grupo-cidade" data-cidade="praiagrande">
   <h2 class="cidade">📍 Praia Grande</h2>
 
   <section class="eventos">
@@ -340,6 +267,8 @@
     <div class="evento-card">
 
       <h2>Comic Power</h2>
+
+      <div class="evento-img">FOTO DO EVENTO</div>
 
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
@@ -362,6 +291,8 @@
 
       <h2>Geek Night</h2>
 
+      <div class="evento-img">FOTO DO EVENTO</div>
+
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
         Aviação Eventos Hall
@@ -383,6 +314,8 @@
 
       <h2>Mega Otaku</h2>
 
+      <div class="evento-img">FOTO DO EVENTO</div>
+
       <div class="info">
         <span class="label">📍 Endereço:</span><br>
         Palácio das Artes
@@ -401,6 +334,7 @@
     </div>
 
   </section>
+  </div>
 
   <a href="../index.html" class="voltar">
     ⬅ 
@@ -409,6 +343,8 @@
   <footer>
   Feito com 🧡 para a comunidade geek da Baixada Santista
 </footer>
+
+<script src="../js/eventos.js"></script>
 
 </body>
 </html>

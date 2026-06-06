@@ -1,0 +1,161 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Fredoka", sans-serif;
+    }
+
+    body{
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ff9d00, #ff7b00, #ff5e00);
+      color: white;
+      padding: 40px;
+    }
+
+    h1{
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 50px;
+      text-shadow: 5px 5px 0 #7a2d00;
+    }
+
+    .filtro-container{
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+
+.filtro-cidade{
+  padding: 12px 18px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: white;
+  color: #ff6b00;
+  box-shadow: 0 8px 0 #d95b00;
+  cursor: pointer;
+}
+
+.filtro-cidade:focus{
+  outline: none;
+}
+
+    .eventos{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .cidade{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 70px;
+  margin-bottom: 35px;
+  text-shadow: 4px 4px 0 #7a2d00;
+}
+
+    .evento-card{
+      width: 320px;
+      background: linear-gradient(180deg, #ffb300, #ff8c00);
+      border-radius: 35px;
+      padding: 25px;
+      box-shadow: 0 12px 0 #d95b00;
+      transition: 0.3s;
+    }
+
+    .evento-link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.evento-link:hover{
+  text-decoration: none;
+}
+
+    .evento-card:hover{
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .evento-card h2{
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 0 #b34700;
+    }
+
+    .info{
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .label{
+      color: #ffe600;
+    }
+
+    .voltar{
+  position: fixed;
+  top: 25px;
+  left: 25px;
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  background: white;
+  color: #ff6b00;
+
+  border-radius: 50%;
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  box-shadow: 0 8px 0 #d95b00;
+
+  transition: 0.3s;
+}
+
+.evento-img{
+  width: 100%;
+  height: 180px;
+  background-color: #ffd27a;
+  border-radius: 20px;
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #b34700;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  border: 3px dashed #ff8c00;
+}
+
+.evento-img-real{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+    .voltar:hover{
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #d95b00;
+    }
+
+    footer{
+  margin-top: 70px;
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 20px;
+}

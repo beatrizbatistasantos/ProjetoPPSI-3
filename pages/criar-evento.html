@@ -8,165 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/formulario.css">
 
-  <style>
-
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Fredoka", sans-serif;
-    }
-
-    body{
-      min-height: 100vh;
-      background: linear-gradient(180deg, #ff9d00, #ff7b00, #ff5e00);
-      color: white;
-      padding: 40px;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-
-    .voltar{
-      position: fixed;
-      top: 25px;
-      left: 25px;
-
-      width: 70px;
-      height: 70px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-decoration: none;
-
-      background: white;
-      color: #ff6b00;
-
-      border-radius: 50%;
-
-      font-size: 2rem;
-      font-weight: bold;
-
-      box-shadow: 0 8px 0 #d95b00;
-
-      transition: 0.3s;
-    }
-
-    .voltar:hover{
-      transform: translateY(4px);
-      box-shadow: 0 4px 0 #d95b00;
-    }
-
-
-    h1{
-      text-align: center;
-      font-size: 4rem;
-      margin-bottom: 50px;
-      text-shadow: 5px 5px 0 #7a2d00;
-    }
-
-
-    .form-container{
-      width: 800px;
-      margin: auto;
-
-      background: linear-gradient(180deg, #ffb300, #ff8c00);
-
-      padding: 40px;
-
-      border-radius: 40px;
-
-      box-shadow: 0 12px 0 #d95b00;
-    }
-
-    .campo{
-      margin-bottom: 30px;
-    }
-
-    .campo label{
-      display: block;
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 0 #b34700;
-    }
-
-    .campo input,
-    .campo textarea,
-    .campo select{
-
-      width: 100%;
-
-      border: none;
-
-      border-radius: 20px;
-
-      padding: 18px;
-
-      font-size: 1rem;
-
-      outline: none;
-
-      color: #ff6b00;
-
-      background: white;
-    }
-
-    textarea{
-      resize: none;
-      height: 150px;
-    }
-
-    .dupla{
-      display: flex;
-      gap: 20px;
-    }
-
-    .dupla .campo{
-      width: 100%;
-    }
-
-
-    .publicar{
-      width: 100%;
-
-      border: none;
-
-      background: white;
-
-      color: #ff6b00;
-
-      padding: 20px;
-
-      border-radius: 25px;
-
-      font-size: 1.3rem;
-
-      font-weight: bold;
-
-      cursor: pointer;
-
-      box-shadow: 0 8px 0 #d95b00;
-
-      transition: 0.3s;
-    }
-
-    .publicar:hover{
-      transform: translateY(4px);
-      box-shadow: 0 4px 0 #d95b00;
-    }
-
-
-    footer{
-      margin-top: 70px;
-      text-align: center;
-      font-size: 1rem;
-      padding-bottom: 20px;
-    }
-
-  </style>
 </head>
 
 <body>
@@ -179,84 +22,171 @@
 
   <div class="form-container">
 
-    <form>
+    <form id="formEvento">
+
+  <div class="campo">
+    <label>Nome do Evento</label>
+    <input id="nomeEvento" type="text" placeholder="Digite o nome do evento">
+  </div>
+
+  <div class="campo">
+    <label>Descrição</label>
+    <textarea id="descricaoEvento" placeholder="Descreva o evento..."></textarea>
+  </div>
+
+  <div class="campo">
+    <label>Cidade</label>
+    <select id="cidadeEvento">
+      <option>São Vicente</option>
+      <option>Santos</option>
+      <option>Guarujá</option>
+      <option>Praia Grande</option>
+    </select>
+  </div>
+
+  <div class="campo">
+    <label>Endereço</label>
+    <input id="enderecoEvento" type="text" placeholder="Digite o endereço">
+  </div>
+
+  <div class="dupla">
+
+    <div class="campo">
+      <label>Data</label>
+      <input id="dataEvento" type="date">
+    </div>
+
+    <div class="campo">
+      <label>Horário Inicial</label>
+      <input id="horaInicio" type="time">
+    </div>
+
+  </div>
+
+  <div class="campo">
+    <label>Horário Final</label>
+    <input id="horaFim" type="time">
+  </div>
+
+  <div class="campo">
+    <label>Imagem do Evento</label>
+    <input id="imagemEvento" type="file" accept="image/*">
+  </div>
+
+  <details class="painel">
+
+    <summary>🎟️ Informações de Entrada</summary>
+
+    <div class="conteudo-painel">
 
       <div class="campo">
-
-        <label>Nome do Evento</label>
-
-        <input type="text" placeholder="Digite o nome do evento">
-
-      </div>
-
-      <div class="campo">
-
-        <label>Descrição</label>
-
-        <textarea placeholder="Descreva o evento..."></textarea>
-
-      </div>
-
-      <div class="campo">
-
-        <label>Cidade</label>
+        <label>Tipo de Entrada</label>
 
         <select>
-          <option>São Vicente</option>
-          <option>Santos</option>
-          <option>Guarujá</option>
-          <option>Praia Grande</option>
+          <option>Gratuito</option>
+          <option>Pago</option>
+          <option>Pago + Alimento</option>
+          <option>Somente Alimento</option>
         </select>
-
       </div>
 
       <div class="campo">
-
-        <label>Endereço</label>
-
-        <input type="text" placeholder="Digite o endereço">
-
-      </div>
-
-      <div class="dupla">
-
-        <div class="campo">
-
-          <label>Data</label>
-
-          <input type="date">
-
-        </div>
-
-        <div class="campo">
-
-          <label>Horário</label>
-
-          <input type="time">
-
-        </div>
-
+        <label>Valor do Ingresso</label>
+        <input type="text" placeholder="Ex: R$ 20,00">
       </div>
 
       <div class="campo">
-
-        <label>Imagem do Evento</label>
-
-        <input type="file">
-
+        <label>Alimento Solidário</label>
+        <input type="text" placeholder="Ex: 1kg de alimento">
       </div>
 
-      <button class="publicar">
-        🚀 Publicar Evento
-      </button>
+    </div>
 
-    </form>
+  </details>
+
+  <details class="painel">
+
+    <summary>👥 Convidados</summary>
+
+    <div class="conteudo-painel">
+
+      <div class="campo">
+        <label>Convidado 1</label>
+        <input type="text" placeholder="Nome do convidado">
+      </div>
+
+      <div class="campo">
+        <label>Convidado 2</label>
+        <input type="text" placeholder="Nome do convidado">
+      </div>
+
+      <div class="campo">
+        <label>Convidado 3</label>
+        <input type="text" placeholder="Nome do convidado">
+      </div>
+
+      <div class="campo">
+        <label>Convidado 4</label>
+        <input type="text" placeholder="Nome do convidado">
+      </div>
+
+    </div>
+
+  </details>
+
+  <details class="painel">
+
+    <summary>🎭 Atrações</summary>
+
+    <div class="conteudo-painel">
+
+      <div class="campo">
+        <label>Atração 1</label>
+        <input type="text" placeholder="Ex: Concurso Cosplay">
+      </div>
+
+      <div class="campo">
+        <label>Descrição da Atração 1</label>
+        <textarea placeholder="Explique a atração"></textarea>
+      </div>
+
+      <div class="campo">
+        <label>Atração 2</label>
+        <input type="text" placeholder="Ex: Concurso K-pop">
+      </div>
+
+      <div class="campo">
+        <label>Descrição da Atração 2</label>
+        <textarea placeholder="Explique a atração"></textarea>
+      </div>
+
+      <div class="campo">
+        <label>Atração 3</label>
+        <input type="text" placeholder="Ex: Arena Gamer">
+      </div>
+
+      <div class="campo">
+        <label>Descrição da Atração 3</label>
+        <textarea placeholder="Explique a atração"></textarea>
+      </div>
+
+    </div>
+
+  </details>
+
+  <button type="submit" class="publicar">
+    🚀 Publicar Evento
+  </button>
+
+</form>
 
   </div>
 
   <footer>
     Feito com 🧡 para a comunidade geek da Baixada Santista
   </footer>
+
+<script src="../js/criar-evento.js"></script>
 
 </body>
 </html>
