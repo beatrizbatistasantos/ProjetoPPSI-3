@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre o Geek Baixada - Conheça nossa missão, pilares e eventos de anime, games, cosplay e cultura pop em toda a Baixada Santista.">
+    <title>Sobre Nós - Geek Baixada</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="..\css\sobre.css">
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <span class="logo-icon">🎮</span>
+            <span class="logo-text">Geek Baixada</span>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="hero-section">
+            <h1 class="hero-title">Sobre <span class="highlight">Nós</span></h1>
+            <div class="hero-card">
+                <p class="hero-text">
+                    O <strong>Geek Baixada</strong> é mais do que um site: somos o coração da cultura pop na Baixada Santista! Nascido como um projeto universitário apaixonado, nosso intuito é conectar fãs de anime, games, cosplay, RPG, card games e K-pop, criando um espaço integrado para divulgação de eventos locais, integração da comunidade e valorização dos artistas da nossa região.
+                </p>
+            </div>
+        </section>
+        <section class="pillars-section">
+            <h2 class="section-title"><span class="emoji">🔥</span> Nossos Pilares</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fa-solid fa-mask"></i></div>
+                    <h3>Cosplay & Arte</h3>
+                    <p>Valorizamos a criatividade local dando palco para os cosplayers e ilustradores expressarem sua arte e talento.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Comunidade</h3>
+                    <p>Unimos a Baixada Santista conectando pessoas com interesses em comum para formar amizades duradouras.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Competição & Lazer</h3>
+                    <p>Divulgamos torneios de games, RPG e card games para testar suas habilidades enquanto se diverte.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="section-title"><span class="emoji">✨</span> Galeria de Destaques</h2>
+            <p class="section-subtitle">Um pouquinho do que rolou nos últimos eventos:</p>
+            
+            <div class="filter-wrapper">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="anime">Anime & Manga</button>
+                <button class="filter-btn" data-filter="cosplay">Cosplay</button>
+                <button class="filter-btn" data-filter="games">Games & RPG</button>
+                <button class="filter-btn" data-filter="kpop">K-Pop</button>
+            </div>
+            
+            <div class="gallery-grid" id="gallery-grid">
+            </div>
+        </section>
+        <section class="faq-section">
+            <h2 class="section-title"><span class="emoji">❓</span> Dúvidas Frequentes</h2>
+            
+            <div class="faq-accordion" id="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>O que é a Geek Baixada?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A Geek Baixada é um portal e projeto universitário feito para divulgar, organizar e reunir a comunidade amante de cultura pop, anime, cosplay, games e K-Pop em toda a região da Baixada Santista.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como posso participar dos eventos?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Basta ficar ligado no nosso portal! Divulgamos calendários de eventos parceiros. A maioria deles tem entrada gratuita ou meia entrada com doação de 1kg de alimento.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como faço para divulgar eventos?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Temos um formulário onde você só precisa preencher para divulgar os eventos mais divertidos da baixada!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quando vamos ter um espaço para avaliação de eventos?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ainda não temos esse espaço, mas, ele é uma das coisas que serão implementadas na próxima atualização!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="..\index.html" class="voltar">
+    ⬅ 
+  </a>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Feito com 🧡 para a comunidade geek da Baixada Santista</p>
+
+        </div>
+    </footer>
+    <script src="..\js\sobre.js"></script>
+</body>
+</html>
