@@ -26,16 +26,47 @@ if(evento){
     evento.descricao || "Descrição não informada";
 
   document.getElementById("entrada").textContent =
-    "Não informado";
+  evento.tipoEntrada || "Não informado";
 
-  document.getElementById("alimento").textContent =
-    "Não informado";
+document.getElementById("valorIngresso").textContent =
+  evento.valorIngresso || "Não informado";
 
+document.getElementById("alimento").textContent =
+  evento.alimentoSolidario || "Não informado";
+
+  if(evento.convidados && evento.convidados.length > 0){
+  document.getElementById("convidados").innerHTML =
+    evento.convidados.join("<br>");
+}else{
   document.getElementById("convidados").textContent =
     "Nenhum convidado informado";
+}
+
+if(evento.atracoes && evento.atracoes.length > 0){
+
+  document.getElementById("atracoes").innerHTML = "";
+
+  evento.atracoes.forEach(atracao => {
+
+    if(atracao.nome){
+
+      document.getElementById("atracoes").innerHTML += `
+        <div class="atracao">
+          <h3>${atracao.nome}</h3>
+          <p>${atracao.descricao || "Sem descrição"}</p>
+        </div>
+      `;
+
+    }
+
+  });
+
+}else{
 
   document.getElementById("atracoes").innerHTML =
     "<p>Nenhuma atração informada.</p>";
+
+}
 
   const imagem = document.getElementById("imagem");
 

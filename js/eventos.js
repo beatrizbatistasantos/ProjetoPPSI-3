@@ -17,7 +17,6 @@ filtro.addEventListener("change", () => {
 });
 
 
-// CARDS FIXOS
 document.querySelectorAll(".evento-card").forEach(card => {
 
   card.addEventListener("click", () => {
@@ -44,7 +43,6 @@ document.querySelectorAll(".evento-card").forEach(card => {
 });
 
 
-// EVENTOS CRIADOS PELO USUÁRIO
 const eventosSalvos =
   JSON.parse(localStorage.getItem("eventosGeek")) || [];
 
