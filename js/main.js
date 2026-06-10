@@ -4,6 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerIndicadores = document.getElementById("carrosselIndicadores");
     const btnEsquerda = document.getElementById("setaEsquerda");
     const btnDireita = document.getElementById("setaDireita");
+    const btnPerfil = document.getElementById("btnPerfil");
+    const btnSobre = document.getElementById("btnSobre");
+
+    if (btnPerfil) {
+        btnPerfil.addEventListener("click", () => {
+            window.location.href = "pages/perfil.html";
+        });
+    }
+
+    if (btnSobre) {
+        btnSobre.addEventListener("click", () => {
+            window.location.href = "pages/sobre.html";
+        });
+    }
 
     if (!localStorage.getItem("eventosGeek") || JSON.parse(localStorage.getItem("eventosGeek")).length === 0) {
         const eventosIniciais = [
@@ -66,110 +80,119 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const eventosDestaque = eventosOrdenados.slice(0, 6);
 
-    containerDestaques.innerHTML = "";
-    containerIndicadores.innerHTML = "";
+    if (containerDestaques && containerIndicadores) {
+        containerDestaques.innerHTML = "";
+        containerIndicadores.innerHTML = "";
 
-    eventosDestaque.forEach((evento, indice) => {
-        const card = document.createElement("div");
-        card.className = "card-destaque";
-
-        const titulo = document.createElement("h3");
-        titulo.textContent = evento.nome;
-        card.appendChild(titulo);
-
-        if (evento.imagem && evento.imagem.trim() !== "" && evento.imagem !== "undefined") {
-            const img = document.createElement("img");
-            img.src = evento.imagem;
-            img.className = "destaque-img-real";
-            img.alt = evento.nome;
-            card.appendChild(img);
-        } else {
-            const divSemImg = document.createElement("div");
-            divSemImg.className = "destaque-sem-img";
-            divSemImg.innerHTML = "🎮<br><span>GEEK EVENTO</span>";
-            card.appendChild(divSemImg);
+        if (eventosDestaque.length === 0) {
+            containerDestaques.innerHTML = "<div class='sem-eventos-aviso'>Nenhum evento agendado no momento.</div>";
+            return;
         }
 
-        const infoBloco = document.createElement("div");
-        infoBloco.className = "destaque-info";
-        infoBloco.innerHTML = `
-            <div><span class="destaque-label">📍 Cidade:</span> ${evento.cidade || "Baixada Santista"}</div>
-            <div style="margin-top: 5px;"><span class="destaque-label">📅 Data:</span> ${evento.data || "A definir"}</div>
-        `;
-        card.appendChild(infoBloco);
+        eventosDestaque.forEach((evento, indice) => {
+            const card = document.createElement("div");
+            card.className = "card-destaque";
 
-        card.addEventListener("click", () => {
-            localStorage.setItem("eventoSelecionado", JSON.stringify(evento));
-            window.location.href = "pages/evento.html";
+            const titulo = document.createElement("h3");
+            titulo.textContent = evento.nome;
+            card.appendChild(titulo);
+
+            if (evento.imagem && evento.imagem.trim() !== "" && evento.imagem !== "undefined") {
+                const img = document.createElement("img");
+                img.src = evento.imagem;
+                img.className = "destaque-img-real";
+                img.alt = evento.nome;
+                card.appendChild(img);
+            } else {
+                const divSemImg = document.createElement("div");
+                divSemImg.className = "destaque-sem-img";
+                divSemImg.innerHTML = "🎮<br><span>GEEK EVENTO</span>";
+                card.appendChild(divSemImg);
+            }
+
+            const infoBloco = document.createElement("div");
+            infoBloco.className = "destaque-info";
+            infoBloco.innerHTML = `
+                <div><span class="destaque-label">📍 Cidade:</span> ${evento.cidade || "Baixada Santista"}</div>
+                <div style="margin-top: 5px;"><span class="destaque-label">📅 Data:</span> ${evento.data || "A definir"}</div>
+            `;
+            card.appendChild(infoBloco);
+
+            card.addEventListener("click", () => {
+                localStorage.setItem("eventoSelecionado", JSON.stringify(evento));
+                if (window.location.pathname.includes("/pages/")) {
+                    window.location.href = "evento.html";
+                } else {
+                    window.location.href = "pages/evento.html";
+                }
+            });
+
+            containerDestaques.appendChild(card);
+
+            const dot = document.createElement("button");
+            dot.className = "bolinha-dot";
+            dot.setAttribute("aria-label", `Slide ${indice + 1}`);
+            
+            dot.addEventListener("click", () => {
+                desligarTemporizador();
+                indiceAtual = indice;
+                atualizarExibicao();
+                ligarTemporizador();
+            });
+
+            containerIndicadores.appendChild(dot);
         });
 
-        containerDestaques.appendChild(card);
-
-        const dot = document.createElement("button");
-        dot.className = "bolinha-dot";
-        dot.setAttribute("aria-label", `Slide ${indice + 1}`);
+        let indiceAtual = 0;
+        let autoplay = null;
         
-        dot.addEventListener("click", () => {
-            desligarTemporizador();
-            indiceAtual = indice;
+        const cardsInstanciados = containerDestaques.querySelectorAll(".card-destaque");
+        const dotsInstanciados = containerIndicadores.querySelectorAll(".bolinha-dot");
+
+        function atualizarExibicao() {
+            dotsInstanciados.forEach(dot => dot.classList.remove("ativa"));
+            if (dotsInstanciados[indiceAtual]) dotsInstanciados[indiceAtual].classList.add("ativa");
+
+            const deslocamento = indiceAtual * 100;
+            containerDestaques.style.transform = `translateX(-${deslocamento}%)`;
+        }
+
+        function avancarMudar() {
+            indiceAtual = (indiceAtual < cardsInstanciados.length - 1) ? indiceAtual + 1 : 0;
             atualizarExibicao();
-            ligarTemporizador();
-        });
+        }
 
-        containerIndicadores.appendChild(dot);
-    });
+        function retrocederMudar() {
+            indiceAtual = (indiceAtual > 0) ? indiceAtual - 1 : cardsInstanciados.length - 1;
+            atualizarExibicao();
+        }
 
-    let indiceAtual = 0;
-    let autoplay = null;
-    
-    const cardsInstanciados = containerDestaques.querySelectorAll(".card-destaque");
-    const dotsInstanciados = containerIndicadores.querySelectorAll(".bolinha-dot");
+        function ligarTemporizador() {
+            desligarTemporizador();
+            autoplay = setInterval(avancarMudar, 3500);
+        }
 
-    function atualizarExibicao() {
-        cardsInstanciados.forEach(card => card.classList.remove("ativo"));
-        dotsInstanciados.forEach(dot => dot.classList.remove("ativa"));
-        
-        if (cardsInstanciados[indiceAtual]) cardsInstanciados[indiceAtual].classList.add("ativo");
-        if (dotsInstanciados[indiceAtual]) dotsInstanciados[indiceAtual].classList.add("ativa");
-    }
+        function desligarTemporizador() {
+            if (autoplay) clearInterval(autoplay);
+        }
 
-    function avancarMudar() {
-        indiceAtual = (indiceAtual < cardsInstanciados.length - 1) ? indiceAtual + 1 : 0;
+        if (btnEsquerda) {
+            btnEsquerda.addEventListener("click", () => {
+                desligarTemporizador();
+                retrocederMudar();
+                ligarTemporizador();
+            });
+        }
+
+        if (btnDireita) {
+            btnDireita.addEventListener("click", () => {
+                desligarTemporizador();
+                avancarMudar();
+                ligarTemporizador();
+            });
+        }
+
         atualizarExibicao();
-    }
-
-    function retrocederMudar() {
-        indiceAtual = (indiceAtual > 0) ? indiceAtual - 1 : cardsInstanciados.length - 1;
-        atualizarExibicao();
-    }
-
-    function ligarTemporizador() {
-        desligarTemporizador();
-        autoplay = setInterval(avancarMudar, 3500);
-    }
-
-    function desligarTemporizador() {
-        if (autoplay) clearInterval(autoplay);
-    }
-
-    btnEsquerda.addEventListener("click", () => {
-        desligarTemporizador();
-        retrocederMudar();
         ligarTemporizador();
-    });
-
-    btnDireita.addEventListener("click", () => {
-        desligarTemporizador();
-        avancarMudar();
-        ligarTemporizador();
-    });
-
-    const wrapper = document.querySelector('.carrossel-wrapper');
-    if (wrapper) {
-        wrapper.addEventListener('mouseenter', desligarTemporizador);
-        wrapper.addEventListener('mouseleave', ligarTemporizador);
     }
-
-    atualizarExibicao();
-    ligarTemporizador();
 });
