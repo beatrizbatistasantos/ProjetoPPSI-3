@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geek Baixada - Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/perfil.css">
+</head>
+<body>
+
+<div class="background-circle"></div>
+
+<div class="login-container">
+
+    <div class="logo">
+        🎮 Geek Baixada
+    </div>
+
+    <div class="login-card">
+
+        <h1>Entrar</h1>
+
+        <p>
+            Acesse sua conta para acompanhar os melhores eventos geek da Baixada Santista.
+        </p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label>E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                >
+
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="input-group">
+
+                <label>Senha</label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Digite sua senha"
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="eye-btn"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+                <span class="error" id="passwordError"></span>
+
+            </div>
+
+            <button
+                type="submit"
+                id="loginBtn"
+                class="login-btn"
+            >
+                Entrar
+            </button>
+
+        </form>
+
+        <div id="message"></div>
+
+        <div class="links">
+
+            <a href="#">Criar Conta</a>
+
+            <a href="#">Esqueci minha senha</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/js/perfil.js"></script>
+
+</body>
+</html>
