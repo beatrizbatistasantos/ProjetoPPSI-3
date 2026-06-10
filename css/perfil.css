@@ -1,99 +1,220 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<title>Geek Baixada - Login</title>
+body{
+    min-height:100vh;
+    background:#ff9800;
+    font-family:'Fredoka',sans-serif;
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-<link rel="stylesheet" href="/css/perfil.css">
-</head>
-<body>
+    overflow:hidden;
+    position:relative;
+}
 
-<div class="background-circle"></div>
+.background-circle{
+    position:absolute;
 
-<div class="login-container">
+    width:350px;
+    height:350px;
 
-    <div class="logo">
-        🎮 Geek Baixada
-    </div>
+    border-radius:50%;
 
-    <div class="login-card">
+    background:rgba(255,255,255,.15);
 
-        <h1>Entrar</h1>
+    top:-120px;
+    left:-120px;
+}
 
-        <p>
-            Acesse sua conta para acompanhar os melhores eventos geek da Baixada Santista.
-        </p>
+.login-container{
+    width:100%;
+    max-width:500px;
+    padding:20px;
+}
 
-        <form id="loginForm">
+.logo{
+    text-align:center;
 
-            <div class="input-group">
-                <label>E-mail</label>
+    color:white;
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Digite seu e-mail"
-                >
+    font-size:2.5rem;
+    font-weight:700;
 
-                <span class="error" id="emailError"></span>
-            </div>
+    margin-bottom:25px;
 
-            <div class="input-group">
+    text-shadow:
+        4px 4px 0 #9c4b00;
+}
 
-                <label>Senha</label>
+.login-card{
 
-                <div class="password-wrapper">
+    background:#ffb627;
 
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Digite sua senha"
-                    >
+    border-radius:30px;
 
-                    <button
-                        type="button"
-                        id="togglePassword"
-                        class="eye-btn"
-                    >
-                        👁
-                    </button>
+    padding:40px;
 
-                </div>
+    box-shadow:
+        0 8px 0 #c96a00;
+}
 
-                <span class="error" id="passwordError"></span>
+.login-card h1{
 
-            </div>
+    text-align:center;
 
-            <button
-                type="submit"
-                id="loginBtn"
-                class="login-btn"
-            >
-                Entrar
-            </button>
+    color:white;
 
-        </form>
+    font-size:3rem;
 
-        <div id="message"></div>
+    text-shadow:
+        4px 4px 0 #9c4b00;
 
-        <div class="links">
+    margin-bottom:15px;
+}
 
-            <a href="#">Criar Conta</a>
+.login-card p{
 
-            <a href="#">Esqueci minha senha</a>
+    text-align:center;
 
-        </div>
+    color:white;
 
-    </div>
+    margin-bottom:30px;
+}
 
-</div>
+.input-group{
+    margin-bottom:20px;
+}
 
-<script src="/js/perfil.js"></script>
+label{
 
-</body>
-</html>
+    display:block;
+
+    color:white;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:1rem;
+
+    outline:none;
+}
+
+.password-wrapper{
+
+    display:flex;
+    gap:10px;
+}
+
+.eye-btn{
+
+    width:60px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    background:white;
+
+    font-size:1.2rem;
+}
+
+.login-btn{
+
+    width:100%;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    background:white;
+
+    color:#ff7b00;
+
+    font-family:'Fredoka',sans-serif;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 5px 0 #c96a00;
+
+    transition:.2s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.login-btn:active{
+    transform:translateY(3px);
+    box-shadow:none;
+}
+
+.error{
+    color:#8d0000;
+    font-size:.9rem;
+}
+
+.success{
+
+    color:#006b15;
+    font-weight:600;
+}
+
+.failure{
+
+    color:#8d0000;
+    font-weight:600;
+}
+
+.links{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+.links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
+
+.loading{
+
+    opacity:.7;
+    cursor:not-allowed;
+}
